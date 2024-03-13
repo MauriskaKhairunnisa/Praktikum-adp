@@ -5,6 +5,12 @@ using namespace std;
 int main() {
    float jari2, luas_permukaan, volume;
    
+   cout<<"\n Tugas Modul 1 no. 1 shift 4 \n";
+   cout<<"\n Nama : Mauriska Khairunnisa \n";
+   cout<<"\n NIM : 2310433016 \n";
+   
+   cout<<"\n Menghitung luas permukaan dan volume bola \n";
+   
    cout << "input jari2 bola: ";
    cin >> jari2;
    cout << endl;
