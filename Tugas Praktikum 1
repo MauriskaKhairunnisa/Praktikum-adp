@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+   float jari2, luas_permukaan, volume;
+   
+   cout << "input jari2 bola: ";
+   cin >> jari2;
+   cout << endl;
+   
+   luas_permukaan = 4/3* 22/7 * jari2 * jari2 * jari2;
+   volume = 4 * 22/7 * jari2 * jari2;
+   
+   cout << "luas permukaan bola = " << luas_permukaan << endl;
+   cout << "volume bola = " << volume << endl;
+   
+   return 0;
+}
