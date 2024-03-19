@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string nama, jeniskelamin, ntujuan, nmaskapai;
+    int umur, tujuan, harga1, harga2, kursi, maskapai, total;
+
+    cout << "Selamat datang di Server Pemesanan Tiket Pusat Padang" << endl;
+    cout << "Masukkan nama: "; getline(cin, nama);
+    cout << "Masukkan umur: "; cin >> umur;
+    cout << "Masukkan jenis kelamin (Pria/Wanita): "; 
+    cin >> jeniskelamin;
+
+    cout << "Masukkan Tujuan:\n1.Jayapura     >>  Rp5000000\n2. IKN >>  Rp6000000\n3. Jakarta      >>  Rp4000000\nPilih salah satu (masukkan angka): ";
+    cin >> tujuan;
+    if (tujuan == 1) { ntujuan = "Jayapura"; harga1 = 5000000; }
+    else if (tujuan == 2) { ntujuan = "IKN"; harga1 = 6000000; }
+    else if (tujuan == 3) { ntujuan = "Jakarta"; harga1 = 4000000; }
+    else { cout << "Error: Invalid choice of tujuan" << endl; return 1; }
+
+    cout << "Jenis maskapai:\n1. Economy Class(10000)\n2. Business Class(20000)\n3. First Class(60000)\nPilih salah satu (masukkan angka): ";
+    cin >> maskapai;
+    if (maskapai == 1) { nmaskapai = "Economy Class"; harga2 = 10000; }
+    else if (maskapai == 2) { nmaskapai = "Business Class"; harga2 = 20000; }
+    else if (maskapai == 3) { nmaskapai = "First Class"; harga2 = 60000; }
+    else { cout << "Error: Invalid choice of maskapai" << endl; return 1; }
+
+    cout << "Masukkan jumlah kursi: ";
+    cin >> kursi;
+    if (kursi <= 0) {
+        cout << "Error: Invalid number of kursi" << endl;
+        return 1;
+    }
+
+    total = kursi * (harga1 + harga2);
+
+    if (kursi >= 1 && kursi <= 3) {
+
+    }
+    else if (kursi > 3) {
+        total *= 0.75;
+    }
+
+
+
+    cout << "\n-------------------------------------------" << endl;
+    cout << "Nama          : " << nama << endl;
+    cout << "Umur          : " << umur << endl;
+    cout << "Jenis Kelamin : " << jeniskelamin << endl;
+    cout << "-------------------------------------------" << endl;
+    cout << "Kota Tujuan   : " << ntujuan << endl;
+    cout << "Jenis Maskapai: " << nmaskapai << endl;
+    cout << "Jumlah Tiket  : " << kursi << endl;
+    cout << "Total Harga   : Rp" << total << endl;
+
+    return 0;
+}
