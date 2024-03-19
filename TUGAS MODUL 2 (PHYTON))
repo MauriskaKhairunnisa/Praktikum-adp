@@ -1,0 +1,48 @@
+print ("Selamat datang di Server Pemesanan Tiket Pusat Padang")
+
+nama = input("Masukkan nama: ")
+umur = int(input("Masukkan umur: "))
+jeniskelamin = input("Masukkan jenis kelamin (Pria/Wanita): ")
+
+# Masukkan Tujuan
+print("Masukkan Tujuan:\n1. Jayapura     >>  Rp5000000\n2. IKN          >>  Rp6000000\n3. Jakarta      >>  Rp4000000\nPilih salah satu (masukkan angka):")
+tujuan = int(input())
+if tujuan == 1:
+    ntujuan = "Jayapura"
+    harga1 = 5000000
+elif tujuan == 2:
+    ntujuan = "IKN"
+    harga1 = 6000000
+elif tujuan == 3:
+    ntujuan = "Jakarta"
+    harga1 = 4000000
+else:
+    print("Error: Pilihan tujuan tidak valid")
+    exit(1)
+
+# Jenis maskapai
+print("Jenis maskapai:\n1. Economy Class(10000)\n2. Business Class(20000)\n3. First Class(60000)\nPilih salah satu (masukkan angka):")
+maskapai = int(input())
+if maskapai == 1:
+    nmaskapai = "Economy Class"
+    harga2 = 10000
+elif maskapai == 2:
+    nmaskapai = "Business Class"
+    harga2 = 20000
+elif maskapai == 3:
+    nmaskapai = "First Class"
+    harga2 = 60000
+else:
+    print("Error: Pilihan maskapai tidak valid")
+    exit(1)
+
+# Masukkan jumlah kursi
+kursi = int(input("Masukkan jumlah kursi: "))
+if kursi <= 0:
+    print("Error: Jumlah kursi tidak valid")
+    exit(1)
+
+total = kursi * (harga1 + harga2)
+
+if 1 <= kursi <= 3:
+    pass
