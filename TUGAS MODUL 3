@@ -2,8 +2,15 @@
 using namespace std;
 
 int main() {
+    
+   cout<<"\n Tugas Modul 1 no. 1 shift 4 ";
+   cout<<"\n Nama : Mauriska Khairunnisa ";
+   cout<<"\n NIM : 2310433016 \n";
+   
+    cout<<"\n Menampilkan pola pyramida menggunakan alphabet \n";
+    
     int n;
-    cout << "Masukkan jumlah huruf pada piramida: ";
+    cout <<"Masukkan jumlah huruf pada piramida: ";
     cin >> n;
 
     for (int i = 1; i <= n; i++) {
