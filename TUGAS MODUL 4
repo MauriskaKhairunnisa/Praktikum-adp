@@ -1,0 +1,22 @@
+print("Tugas Modul 4")
+print("==============================")
+print("Nama  : Mauriska Khairunnisa")
+print("NIM   : 2310433016")
+print("Shift : 4")
+print("==============================")
+
+total_dor=0
+
+for i in range(1,101):
+    if i%3==0:
+        print("DOR",end=" ")
+        total_dor +=1
+    elif i%5==0:
+        print("DOR",end=" ")
+        total_dor +=1
+    else:
+        print(i,end=" ")
+    if i%10==0:
+        print()
+        
+print("\nTotal DOR yang muncul sebanyak =",total_dor)
