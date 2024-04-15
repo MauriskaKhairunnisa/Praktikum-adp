@@ -1,0 +1,31 @@
+print("TUGAS MODUL 5 ( ARRAY )")
+print("===============================")
+print("NAMA  : MAURISKA KHAIRUNNISA")
+print("NIM   : 2310433016")
+print("SHIFT : 4")
+print("===============================")
+
+def main():
+    def input_array(array_name):
+        while True:
+            try:
+                array = list(map(int, input(f"Masukkan array {array_name} (0-9, pisahkan dengan spasi): ").split()))
+                if all(0 <= num <= 9 for num in array):
+                    return array
+                else:
+                    print("Masukkan hanya bilangan bulat dari 0 sampai 9")
+           
+    A = input_array("A")
+    B = input_array("B")
+
+    only_in_A = [num for num in A if num not in B]
+    only_in_B = [num for num in B if num not in A]
+    in_both = [num for num in A if num in B]
+
+    print("Array yang hanya berada di A:", only_in_A)
+    print("Array yang hanya berada di B:", only_in_B)
+    print("Array yang berada di A dan B:", in_both)
+
+
+if __name__ == "__main__":
+    main()
