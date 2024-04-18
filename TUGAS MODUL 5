@@ -14,7 +14,9 @@ def main():
                     return array
                 else:
                     print("Masukkan hanya bilangan bulat dari 0 sampai 9")
-           
+            except ValueError:
+                print("Masukkan hanya bilangan bulat dari 0 sampai 9")
+
     A = input_array("A")
     B = input_array("B")
 
@@ -25,7 +27,6 @@ def main():
     print("Array yang hanya berada di A:", only_in_A)
     print("Array yang hanya berada di B:", only_in_B)
     print("Array yang berada di A dan B:", in_both)
-
 
 if __name__ == "__main__":
     main()
