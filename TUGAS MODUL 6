@@ -1,0 +1,36 @@
+input("Nama : Mauriska Khairunnisa")
+input("NIM  : 2310433016")
+input("shift: 4")
+input("tugas modul 6")
+
+n = int (input("jumlah barang : "))
+
+barang = []
+harga = []
+stok = []
+    
+for i in range (n) :
+    nama = input(f"masukkan barang ke-{i+1}: ")
+    harga = int(input(f"masukkan harga barang : "))
+    stok = int(input(f"masukkan stok barang : "))
+    barang.append([nama, harga, stok])
+print("======================================================================")
+print("\t\t\tHARGA DAN STOK BARANG")
+print("======================================================================")
+print("\tNAMA BARANG\t|\tHARGA BARANG\t|\tSTOK BARANG\t")
+print("----------------------------------------------------------------------")
+
+for i in range(n):
+    print(f"\t{barang[i][0]}\t\t|\t{barang[i][1]}\t\t|\t{barang[i][2]}")
+print("=======================================================================")
+
+keuntungan = harga * stok
+total_keuntungan += keuntungan
+
+if keuntungan > keuntungan_terbesar:
+        keuntungan_terbesar = keuntungan
+        nama_terbesar = nama
+
+if keuntungan < keuntungan_terkecil:
+        keuntungan_terkecil = keuntungan
+        nama_terkecil = nama
