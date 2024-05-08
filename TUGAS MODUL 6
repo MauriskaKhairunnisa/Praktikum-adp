@@ -1,36 +1,51 @@
-input("Nama : Mauriska Khairunnisa")
-input("NIM  : 2310433016")
-input("shift: 4")
-input("tugas modul 6")
+print("Nama : Mauriska Khairunnisa")
+print("NIM  : 2310433016")
+print("Shift: 4")
+print("TUGAS MODUL 6")
+print("-------------------------------------------------------------------------------------------------")
+print("")
 
-n = int (input("jumlah barang : "))
+n = int(input("Jumlah barang: "))
 
 barang = []
-harga = []
-stok = []
-    
-for i in range (n) :
-    nama = input(f"masukkan barang ke-{i+1}: ")
-    harga = int(input(f"masukkan harga barang : "))
-    stok = int(input(f"masukkan stok barang : "))
-    barang.append([nama, harga, stok])
-print("======================================================================")
-print("\t\t\tHARGA DAN STOK BARANG")
-print("======================================================================")
-print("\tNAMA BARANG\t|\tHARGA BARANG\t|\tSTOK BARANG\t")
-print("----------------------------------------------------------------------")
 
 for i in range(n):
-    print(f"\t{barang[i][0]}\t\t|\t{barang[i][1]}\t\t|\t{barang[i][2]}")
-print("=======================================================================")
+    nama = input(f"Masukkan nama barang ke-{i + 1}: ")
+    harga = int(input(f"Masukkan harga barang: "))
+    stok = int(input(f"Masukkan stok barang: "))
+    barang.append([nama, harga, stok])
 
-keuntungan = harga * stok
-total_keuntungan += keuntungan
+print("=================================================================================================")
+print("\t\t\t\tHARGA DAN STOK BARANG")
+print("=================================================================================================")
+print("\tNAMA BARANG\t|\tHARGA BARANG\t|\tSTOK BARANG\t|\tTOTAL\t")
+print("-------------------------------------------------------------------------------------------------")
 
-if keuntungan > keuntungan_terbesar:
-        keuntungan_terbesar = keuntungan
+total_keuntungan = 0
+keuntungan_terbesar = 0
+nama_terbesar = ""
+keuntungan_terkecil = 9**6  
+nama_terkecil = ""
+
+for item in barang:
+    nama = item[0]
+    harga = item[1]
+    stok = item[2]
+    total = harga * stok
+    
+    total_keuntungan += total
+    
+    if total > keuntungan_terbesar:
+        keuntungan_terbesar = total
         nama_terbesar = nama
-
-if keuntungan < keuntungan_terkecil:
-        keuntungan_terkecil = keuntungan
+    
+    if total < keuntungan_terkecil:
+        keuntungan_terkecil = total
         nama_terkecil = nama
+    
+    print(f"\t{nama:^7}\t\t|\t{harga:^7}\t\t|\t{stok:^7}\t\t|\t{total:^7}\t")
+
+print("=================================================================================================")
+print(f"Total Keuntungan: {total_keuntungan}")
+print(f"Keuntungan Terbesar: {keuntungan_terbesar} (Barang: {nama_terbesar})")
+print(f"Keuntungan Terkecil: {keuntungan_terkecil} (Barang: {nama_terkecil})")
