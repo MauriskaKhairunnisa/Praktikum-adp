@@ -1,0 +1,27 @@
+print("Tugas Modul 7 shift 4 FUNGSI")
+print("Nama : Mauriska Khairunnisa")
+print("NIM : 2310433016")
+print("------------------------------------------------------------")
+def GLBB(data):
+    print("===========================================================================================================")
+    print("No.  |\tKECEPATAN AWAL\t|\tPERCEPATAN\t|\tWAKTU\t|\tKECEPATAN AKHIR\t|\tJARAK")
+    print("-----------------------------------------------------------------------------------------------------------")
+
+    for i, entry in enumerate(data):
+        kecepatan_awal, percepatan, waktu = entry
+        kecepatan_akhir = kecepatan_awal + (percepatan * waktu)
+        jarak = (kecepatan_awal*waktu) + (0.5*percepatan*waktu**2)
+        
+        print(f"{i+1}    |\t{kecepatan_awal}\t\t|\t\t{percepatan}\t|\t{waktu}\t|\t{kecepatan_akhir}\t\t|\t{jarak}")
+    print("-----------------------------------------------------------------------------------------------------------")
+
+n = int(input("Masukkan jumlah data: "))
+data = []
+for i in range(n):
+    kecepatan_awal = int(input(f"Masukkan Kecepatan awal data ke-{i+1}: "))
+    percepatan = int(input("Masukkan Percepatan: "))
+    waktu = int(input("Masukkan waktu: "))
+    data.append([kecepatan_awal, percepatan, waktu])
+    
+    
+GLBB(data)
