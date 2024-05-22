@@ -1,0 +1,65 @@
+print("Nama  : Mauriska Khairunnisa")
+print("NIM   : 2310433016")
+print("Shift : 4")
+print("         PENYIMPANAN DATA KEUANGAN           ")
+print("---------------------------------------------")
+print()
+
+def tambah_data_keuangan(tanggal, keterangan, jumlah, tipe):
+    with open("database_keuangan.txt", "a") as file:
+        file.write(f"{tanggal},{keterangan},{jumlah},{tipe}\n")
+    print("Data keuangan ditambahkan.")
+
+def hapus_data_keuangan(tanggal):
+    with open("database_keuangan.txt", "r") as file:
+         lines = file.readlines()
+    with open("database_keuangan.txt", "w") as file:
+        for line in lines:
+            data = line.strip().split(',')
+            if data[0] != tanggal:
+                file.write(line)
+    print("Data keuangan berhasil dihapus.")
+
+def tampilkan_data_keuangan():
+    with open("database_keuangan.txt", "r") as file:
+        data_keuangan = file.readlines()
+
+    if data_keuangan:
+        print("=====================================================================================================")
+        print("| {:<20} | {:<20} | {:<15} | {:<10} |".format("Tanggal Transaksi", "Keterangan", "Jumlah Uang", "Tipe"))
+        print("=====================================================================================================")
+        for data in data_keuangan:
+            tanggal, keterangan, jumlah_uang, tipe = data.strip().split(',')
+            print("| {:<20} | {:<20} | {:<15} | {:<10} |".format(tanggal, keterangan, jumlah_uang, tipe))
+        print("=====================================================================================================")
+    else:
+        print("Database keuangan kosong.")
+
+while True:
+    print("-----------------------------------")
+    print("|          DATA KEUANGAN          |")
+    print("-----------------------------------")
+    print("Menu:")
+    print("1. Tambah Data Keuangan")
+    print("2. Hapus Data Keuangan")
+    print("3. Tampilkan Semua Data Keuangan")
+    print("4. Keluar")
+    print("-----------------------------------\n")
+    pilihan = input("Pilih menu (1/2/3/4): ")
+
+    if pilihan == "1":
+        tanggal = input("Tanggal transaksi (h-b-t): ")
+        keterangan = input("Keterangan keuangan: ")
+        jumlah = input("Jumlah uang: ")
+        tipe = input("Tipe (pemasukan/pengeluaran): ")
+        tambah_data_keuangan(tanggal, keterangan, jumlah, tipe)
+    elif pilihan == "2":
+        tanggal = input("Tanggal transaksi yang akan dihapus (h-b-t): ")
+        hapus_data_keuangan(tanggal)
+    elif pilihan == "3":
+        tampilkan_data_keuangan()
+    elif pilihan == "4":
+        print("Silahkan berkunjung kembali!")
+        break
+    else:
+        print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
